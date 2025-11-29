@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Velvet - Modern Elegance</title>
+    <meta name="description" content="Velvet - Luxury Fashion Store" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              obsidian: '#05020a',
+              midnight: '#0F0518', /* New Deep Velvet Dark */
+              plum: '#1E0B4B',
+              lavender: '#E9D5FF',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+      
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #FFFFFF;
+        color: #2E1065; /* Deep Royal Purple */
+      }
+      
+      /* Dark mode body transition */
+      .dark body {
+        background-color: #0F0518; /* Midnight Velvet */
+        color: #E9D5FF;
+      }
+      
+      h1, h2, h3, h4, .font-serif {
+        font-family: 'Playfair Display', serif;
+      }
+
+      /* Custom Purple Scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #F9F5FF; /* "Lighty" Lavender */
+      }
+
+      .dark ::-webkit-scrollbar-track {
+        background: #0F0518;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #A78BFA; /* Lighter Violet */
+        border-radius: 5px;
+        border: 2px solid #F9F5FF;
+      }
+
+      .dark ::-webkit-scrollbar-thumb {
+        background: #6D28D9;
+        border: 2px solid #0F0518;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: #8B5CF6;
+      }
+
+      .dark ::-webkit-scrollbar-thumb:hover {
+        background: #A78BFA;
+      }
+
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      @keyframes fade-in-up {
+        0% { opacity: 0; transform: translateY(30px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+      
+      @keyframes slide-up-fade {
+        0% { opacity: 0; transform: translateY(50px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+
+      @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+
+      @keyframes drawPath {
+        0% { stroke-dashoffset: 50; opacity: 0; }
+        10% { opacity: 1; }
+        100% { stroke-dashoffset: 0; opacity: 1; }
+      }
+
+      .animate-fade-in-up {
+        animation: fade-in-up 1s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+      }
+      
+      .animate-slide-up-fade {
+        animation: slide-up-fade 0.5s ease-out forwards;
+      }
+
+      .animate-scroll {
+        animation: scroll 30s linear infinite;
+      }
+
+      .animate-draw-path {
+        stroke-dasharray: 50;
+        stroke-dashoffset: 50;
+        animation: drawPath 2s ease-out forwards;
+      }
+
+      ::selection {
+        background-color: #C4B5FD; /* Soft Lilac */
+        color: #2E1065;
+      }
+
+      /* Custom Range Slider Styles */
+      .range-slider-input {
+        -webkit-appearance: none;
+        pointer-events: none;
+        position: absolute;
+        height: 0;
+        width: 100%;
+        outline: none;
+        z-index: 20;
+      }
+
+      .range-slider-input::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        pointer-events: auto;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: #6D28D9;
+        cursor: pointer;
+        border: 2px solid white;
+        box-shadow: 0 0 0 1px #6D28D9;
+        transition: transform 0.1s;
+      }
+
+      .range-slider-input::-webkit-slider-thumb:hover {
+        transform: scale(1.2);
+      }
+
+      .range-slider-input::-moz-range-thumb {
+        pointer-events: auto;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: #6D28D9;
+        cursor: pointer;
+        border: 2px solid white;
+        box-shadow: 0 0 0 1px #6D28D9;
+        transition: transform 0.1s;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.29.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
